@@ -2,7 +2,7 @@ function openUpdateModal(id,title,desc,link,cat){
   var modal=document.getElementById("blogUpdateModal");
   modal.style.display = 'block';
   var modalTitle = document.getElementById("uTitle");
-  var modalLink = document.getElementById("ulink");
+  // var modalLink = document.getElementById("ublogImg");
   var modalDesc = document.getElementById("udescription");
   var modalCate = document.getElementById("ucategory");
   var modalId = document.getElementById("uid");
@@ -12,7 +12,7 @@ function openUpdateModal(id,title,desc,link,cat){
 
   modalId.value = id;
   modalTitle.value = title;
-  modalLink.value = link;
+  // modalLink.value = link;
   modalDesc.value = desc;
   for (var i = 0; i < modalCate.options.length; i++) {
     if (modalCate.options[i].value === cat) {
@@ -47,13 +47,13 @@ function openModal(id) {
     var modalOverlay = document.getElementById(id);
     if(id=="blogUpdateModal"){
       var modalTitle = document.getElementById("uTitle");
-      var modalLink = document.getElementById("ulink");
+      // var modalLink = document.getElementById("ublogImg");
       var modalDesc = document.getElementById("udescription");
       var modalCate = document.getElementById("ucategory");
       var modalId = document.getElementById("uid");
       modalId.value = "";
       modalTitle.value = "";
-      modalLink.value = "";
+      // modalLink.value = "";
       modalDesc.value = "";
       if(modalCate.options.length>0){
       modalCate.options[0].selected = true;}
@@ -61,11 +61,11 @@ function openModal(id) {
     }
     else if(id=="blogModal"){
       var modalTitle = document.getElementById("title");
-      var modalLink = document.getElementById("link");
+      // var modalLink = document.getElementById("blogImg");
       var modalDesc = document.getElementById("description");
       var modalCate = document.getElementById("blogCategory");
       modalTitle.value = "";
-      modalLink.value = "";
+      // modalLink.value = "";
       modalDesc.value = "";
       // console.log(modalCate);
       if(modalCate.options.length>0){

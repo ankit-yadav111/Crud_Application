@@ -16,11 +16,11 @@
 				blogsData.forEach(blog => {
 					if(cate=="all" || cate==blog.Category){
 					card+= `<div class="col">
-						<div class="card shadow my-3">
-							<img src="${blog.link}" class="card-img-top" height="350px" alt="...">
+						<div class="card shadow my-3" style="padding:10px;">
+							<img src="${blog.link}" class="card-img-top" height="300px"  alt="Not Found">
 							<div class="card-body">
 							<h5 class="card-title">${blog.Title}</h5>
-							<p class="card-text">${blog.Description}.</p>
+							<p class="card-text" style="height:150px; overflow:auto;">${blog.Description}.</p>
 							</div>
 						</div>
 						</div>`;

@@ -19,10 +19,10 @@
                             if($blog->Category==$category){?>
                                 <div class="col" style="padding:15px;">
                                     <div class="card shadow " style="padding:10px;">
-                                    <img src="<?=($blog->link) ?>" class="card-img-top" height="350px" alt="...">
+                                    <img src="<?=($blog->link) ?>" class="card-img-top" height="300px" alt="Not Found">
                                         <div class="card-body">
                                             <h5 class="card-title"><?=($blog->Title) ?></h5>
-                                            <p class="card-text"><?=($blog->Description) ?>.</p>
+                                            <p class="card-text " style="height:150px; overflow:auto;"><?=($blog->Description) ?>.</p>
                                             <button type="button" class=" text-white rounded btn-danger float-right mx-2"  onclick="deleteBlog(<?= $blog->id ?>)"style="height:30px;">Delete</button>
                                             <button type="button" class=" rounded btn-primary mx-2 float-left" style="height:30px;" onclick="openUpdateModal('<?= $blog->id ?>','<?= $blog->Title ?>','<?= $blog->Description ?>','<?= $blog->link ?>','<?= $blog->Category ?>')">Edit</button>
                                         </div>
@@ -32,7 +32,7 @@
                     <?php endforeach; ?>
                     </div>
                 <?php endforeach;?>
-            <!-- PHP Category End -->  
+            <!-- PHP Category End -->
         </div>
                 </div>
 
@@ -50,14 +50,14 @@
             </button>
             </div>
             <div class="modal-body">
-            <form action="<?= base_url('Blog/createBlog')?>" method="post">
+            <form action="<?= base_url('Blog/createBlog')?>" method="post" enctype="multipart/form-data">
                 <div class="form-group">
                 <span style="color: red;">* </span><label for="formGroupExampleInput">Title</label>
                 <input type="text" class="form-control " id="title" name="title" placeholder="Title" required/>
                 </div>
                 <div class="form-group">
-                <span style="color: red;">* </span><label for="formGroupExampleInput">Link</label>
-                <input type="text" class="form-control " id="link" name="link" placeholder="web link" required/>
+                <span style="color: red;">* </span><label for="formGroupExampleInput">Image</label><br>
+                <input type="file" class=" " id="blogImg" name="blogImg" accept="image/png, image/jpeg" required/>
                 </div>
                 <div class="form-group">
                 <label for="formGroupExampleInput2">Description</label>
@@ -95,15 +95,15 @@
             </button>
             </div>
             <div class="modal-body">
-            <form action="<?= base_url('Blog/updateBlog')?>" method="post">
+            <form action="<?= base_url('Blog/updateBlog')?>" method="post" enctype="multipart/form-data">
                 <input type="text" class="invisible" style="height:1px; width:1px" id="uid" name="uid"/>
                 <div class="form-group">
                 <span style="color: red;">* </span><label for="formGroupExampleInput">Title</label>
                 <input type="text" class="form-control " id="uTitle" name="uTitle" placeholder="Title" required/>
                 </div>
                 <div class="form-group">
-                <span style="color: red;">* </span><label for="formGroupExampleInput">Link</label>
-                <input type="text" class="form-control " id="ulink" name="ulink" placeholder="web link" required/>
+                <span style="color: red;">* </span><label for="formGroupExampleInput">Image</label><br>
+                <input type="file" class="" id="ublogImg" name="ublogImg" accept="image/png, image/jpeg" required/>
                 </div>
                 <div class="form-group">
                 <label for="formGroupExampleInput2">Description</label>
