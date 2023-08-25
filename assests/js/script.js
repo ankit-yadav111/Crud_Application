@@ -1,8 +1,26 @@
+function fileValidation(fileInput) {
+  // var fileInput = document.getElementById(id);
+   
+  var filePath = fileInput.value;
+
+  // Allowing file type
+  var allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
+   
+  if (!allowedExtensions.exec(filePath)) {
+      alert('Invalid file type');
+      fileInput.value = '';
+  }
+  else if(fileInput.files[0].size>2*1024*1024){
+    alert('File size must be less than or equal to 2MB');
+      fileInput.value = '';
+  }
+}
+
 function openUpdateModal(id,title,desc,link,cat){
   var modal=document.getElementById("blogUpdateModal");
   modal.style.display = 'block';
   var modalTitle = document.getElementById("uTitle");
-  // var modalLink = document.getElementById("ublogImg");
+  console.log(link);
   var modalDesc = document.getElementById("udescription");
   var modalCate = document.getElementById("ucategory");
   var modalId = document.getElementById("uid");

@@ -102,8 +102,8 @@
                 <input type="text" class="form-control " id="uTitle" name="uTitle" placeholder="Title" required/>
                 </div>
                 <div class="form-group">
-                <span style="color: red;">* </span><label for="formGroupExampleInput">Image</label><br>
-                <input type="file" class="" id="ublogImg" name="ublogImg" accept="image/png, image/jpeg" required/>
+                <label for="formGroupExampleInput">Image</label><br>
+                <input type="file" class="" id="ublogImg" name="ublogImg" accept="image/png, image/jpeg"/>
                 </div>
                 <div class="form-group">
                 <label for="formGroupExampleInput2">Description</label>
@@ -135,6 +135,16 @@
         <script>
             var bar=document.getElementById("blogBar");
             bar.classList.add("active");
+            var imgBlog = document.getElementById('blogImg');
+            var imgUpdateBlog = document.getElementById('ublogImg');
+
+            imgBlog.onchange= function() {
+            fileValidation(imgBlog);
+            };
+
+            imgUpdateBlog.onchange= function() {
+            fileValidation(imgUpdateBlog);
+            };
         </script>
     </body>
 </html>
